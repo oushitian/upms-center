@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.DataDimensionValuesMapper">
+    <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.DataDimensionValues">
+        <id column="rec_id" jdbcType="INTEGER" property="recId"/>
+        <result column="dimension_id" jdbcType="INTEGER" property="dimensionId"/>
+        <result column="display_name" jdbcType="VARCHAR" property="displayName"/>
+        <result column="attribute_value" jdbcType="VARCHAR" property="attributeValue"/>
+        <result column="gmt_modified" jdbcType="INTEGER" property="gmtModified"/>
+        <result column="modifier" property="modifier" jdbcType="VARCHAR"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    rec_id, dimension_id, display_name, attribute_value,gmt_modified,modifier
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from upms_data_dimension_values
+        where rec_id = #{recId,jdbcType=INTEGER}
+        and is_deleted=0
+    </select>
+
+    <select id="queryByDimensionAttributeName" resultMap="BaseResultMap">
+        select
+        dv.display_name, dv.attribute_value
+        from upms_data_dimension_values dv INNER JOIN upms_data_dimension d ON dv.dimension_id = d.dimension_id
+        where d.attribute_name = #{dimensionAttributeName}
+        and d.is_deleted=0
+        and dv.is_deleted=0
+    </select>
+
+    <select id="queryList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from upms_data_dimension_values
+        <where>
+            <if test="dimensionId!=null">
+                and dimension_id = #{dimensionId}
+            </if>
+            <if test="displayName!=null">
+                and display_name = #{displayName}
+            </if>
+            and is_deleted=0
+        </where>
+        <if test="offset!=null">
+            limit #{offset}, #{max}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    update upms_data_dimension_values set is_deleted=1
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.jolly.upms.manager.model.DataDimensionValues">
+    insert into upms_data_dimension_values ( dimension_id, display_name,
+      attribute_value,gmt_modified,modifier)
+    values ( #{dimensionId,jdbcType=INTEGER}, #{displayName,jdbcType=VARCHAR},
+      #{attributeValue,jdbcType=VARCHAR},#{gmtModified,jdbcType=INTEGER},#{modifier,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.DataDimensionValues">
+        insert into upms_data_dimension_values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="recId != null">
+                rec_id,
+            </if>
+            <if test="dimensionId != null">
+                dimension_id,
+            </if>
+            <if test="displayName != null">
+                display_name,
+            </if>
+            <if test="attributeValue != null">
+                attribute_value,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="recId != null">
+                #{recId,jdbcType=INTEGER},
+            </if>
+            <if test="dimensionId != null">
+                #{dimensionId,jdbcType=INTEGER},
+            </if>
+            <if test="displayName != null">
+                #{displayName,jdbcType=VARCHAR},
+            </if>
+            <if test="attributeValue != null">
+                #{attributeValue,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.DataDimensionValues">
+        update upms_data_dimension_values
+        <set>
+            <if test="dimensionId != null">
+                dimension_id = #{dimensionId,jdbcType=INTEGER},
+            </if>
+            <if test="displayName != null">
+                display_name = #{displayName,jdbcType=VARCHAR},
+            </if>
+            <if test="attributeValue != null">
+                attribute_value = #{attributeValue,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified,jdbcType=INTEGER},
+            </if>
+            <if test="modifier != null">
+                modifier = #{modifier,jdbcType=INTEGER},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=INTEGER}
+            </if>
+        </set>
+        where rec_id = #{recId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.DataDimensionValues">
+    update upms_data_dimension_values
+    set dimension_id = #{dimensionId,jdbcType=INTEGER},
+      display_name = #{displayName,jdbcType=VARCHAR},
+      attribute_value = #{attributeValue,jdbcType=VARCHAR},
+     gmt_modified=#{gmtModified,jdbcType=INTEGER},
+    modifier=#{modifier,jdbcType=VARCHAR},
+    is_deleted = #{isDeleted,jdbcType=INTEGER}
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+
+    <select id="queryCount" resultType="java.lang.Long">
+        select
+        count(*)
+        from upms_data_dimension_values
+        <where>
+            <if test="dimensionId!=null and dimensionId!=''">
+                and dimension_id = #{dimensionId}
+            </if>
+            and is_deleted=0
+        </where>
+    </select>
+</mapper>

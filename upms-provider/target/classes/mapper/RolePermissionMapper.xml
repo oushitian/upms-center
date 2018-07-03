@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.RolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.RolePermission">
+    <id column="rec_id" jdbcType="INTEGER" property="recId" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="permission_string" jdbcType="VARCHAR" property="permissionString" />
+    <result column="attribute_name" jdbcType="VARCHAR" property="attributeName" />
+    <result column="attribute_values" jdbcType="VARCHAR" property="attributeValues" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rec_id, role_id, permission_string, attribute_name, attribute_values
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from upms_role_permission
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from upms_role_permission
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </delete>
+
+  <delete id="deleteRolePermission">
+    delete from upms_role_permission
+    where role_id = #{roleId}
+    <if test="permStr!=null and permStr!=''">
+      and permission_string = #{permStr}
+    </if>
+  </delete>
+
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.RolePermission">
+    insert into upms_role_permission (rec_id, role_id, permission_string, 
+      attribute_name, attribute_values)
+    values (#{recId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{permissionString,jdbcType=VARCHAR}, 
+      #{attributeName,jdbcType=VARCHAR}, #{attributeValues,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.RolePermission">
+    insert into upms_role_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="permissionString != null">
+        permission_string,
+      </if>
+      <if test="attributeName != null">
+        attribute_name,
+      </if>
+      <if test="attributeValues != null">
+        attribute_values,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="permissionString != null">
+        #{permissionString,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeName != null">
+        #{attributeName,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeValues != null">
+        #{attributeValues,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.RolePermission">
+    update upms_role_permission
+    <set>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="permissionString != null">
+        permission_string = #{permissionString,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeName != null">
+        attribute_name = #{attributeName,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeValues != null">
+        attribute_values = #{attributeValues,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.RolePermission">
+    update upms_role_permission
+    set role_id = #{roleId,jdbcType=INTEGER},
+      permission_string = #{permissionString,jdbcType=VARCHAR},
+      attribute_name = #{attributeName,jdbcType=VARCHAR},
+      attribute_values = #{attributeValues,jdbcType=VARCHAR}
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+
+  <select id="queryByRoleId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from upms_role_permission
+    where role_id = #{roleId}
+  </select>
+
+
+  <select id="countByLikeAttributeValueAndAttributeName" resultType="long">
+    select
+    count(*)
+    from upms_role_permission u where 1 = 1
+    <if test="attributeName!=null and attributeName!=''">
+      AND  attribute_name = #{attributeName,jdbcType=VARCHAR}
+    </if>
+    <if test="attributeValue!=null and attributeValue!=''">
+      AND   attribute_values like  CONCAT('%', #{attributeValue}, '%')
+    </if>
+  </select>
+</mapper>

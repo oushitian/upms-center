@@ -1,0 +1,11 @@
+.loading-mask-default {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: auto;
+    height: 16px;
+    padding: 12px 5px 10px 30px;
+    background: #fff url('../insdep/images/loading.gif') no-repeat scroll 5px 10px;
+    border: 2px solid #717171;
+    z-index: 9999;
+}

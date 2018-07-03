@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.Menu">
+    <id column="menu_id" jdbcType="INTEGER" property="menuId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="display_order" jdbcType="INTEGER" property="displayOrder" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="permission_string" jdbcType="VARCHAR" property="permissionString" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="gmt_created" jdbcType="INTEGER" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="INTEGER" property="gmtModified" />
+    <result column="application_id" jdbcType="INTEGER" property="applicationId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    menu_id, name, display_order, parent_id, url, permission_string, type, gmt_created, 
+    gmt_modified, application_id
+  </sql>
+  <select id="queryMenusByUserId" resultMap="BaseResultMap">
+    select
+    me.menu_id, me.name, me.display_order, me.parent_id, me.url, me.permission_string, me.type, me.gmt_created,
+    me.gmt_modified, me.application_id
+    from upms_user_menu um inner join upms_menu me on um.menu_id = me.menu_id
+    <where>
+      <if test="userId!=null">
+        and um.user_id = #{userId}
+      </if>
+      <if test="applicationId!=null">
+        and me.application_id = #{applicationId}
+      </if>
+      <if test="types!=null">
+        and me.type in
+        <foreach collection="types" open="(" separator="," close=")" item="type">
+          #{type}
+        </foreach>
+      </if>
+    </where>
+  </select>
+  <select id="queryMenusByRoleId" resultMap="BaseResultMap">
+    select
+    me.menu_id, me.name, me.display_order, me.parent_id, me.url, me.permission_string, me.type, me.gmt_created,
+    me.gmt_modified, me.application_id
+    from upms_role_menu_group rmg
+    inner join upms_menu_group_detail detail on rmg.menu_group_id = detail.menu_group_id
+    inner join upms_menu me on detail.menu_id = me.menu_id
+    <where>
+      <if test="roleId!=null">
+        and rmg.role_id = #{roleId}
+      </if>
+      <if test="applicationId!=null">
+        and me.application_id = #{applicationId}
+      </if>
+      <if test="types!=null">
+        and me.type in
+        <foreach collection="types" open="(" separator="," close=")" item="type">
+          #{type}
+        </foreach>
+      </if>
+    </where>
+  </select>
+  <select id="queryList" resultMap="BaseResultMap">
+    SELECT
+    a.menu_id, a.name, a.display_order, a.parent_id, a.url, a.permission_string, a.type, a.gmt_created,
+    a.gmt_modified, a.application_id
+    FROM upms_menu a left join upms_menu b on a.parent_id = b.menu_id
+    <where>
+      <if test="applicationId!=null">
+        and a.application_id = #{applicationId}
+      </if>
+      <if test="type!=null">
+        and a.type = #{type}
+      </if>
+      <if test="name!=null and name!=''">
+        and a.name LIKE concat('%',#{name},'%')
+      </if>
+      <if test="parentName!=null and parentName!=''">
+        and b.name LIKE concat('%',#{parentName},'%')
+      </if>
+      <if test="url!=null and url!=''">
+        and a.url LIKE concat('%',#{url},'%')
+      </if>
+      <if test="menuIds!=null">
+        and a.menu_id in
+        <foreach collection="menuIds" open="(" separator="," close=")" item="menuId">
+          #{menuId}
+        </foreach>
+      </if>
+      <if test="permitApplicationIds!=null">
+        AND a.application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+          #{appId}
+        </foreach>
+      </if>
+    </where>
+    order by a.`type`, a.gmt_created desc
+    <if test="offset!=null">
+      limit #{offset}, #{max}
+    </if>
+  </select>
+  <select id="queryCount" resultType="long">
+    SELECT
+    count(*)
+    FROM upms_menu a left join upms_menu b on a.parent_id = b.menu_id
+    <where>
+      <if test="applicationId!=null">
+        and a.application_id = #{applicationId}
+      </if>
+      <if test="type!=null">
+        and a.type = #{type}
+      </if>
+      <if test="name!=null and name!=''">
+        and a.name LIKE concat('%',#{name},'%')
+      </if>
+      <if test="parentName!=null and parentName!=''">
+        and b.name LIKE concat('%',#{parentName},'%')
+      </if>
+      <if test="url!=null and url!=''">
+        and a.url LIKE concat('%',#{url},'%')
+      </if>
+      <if test="permitApplicationIds!=null">
+        AND a.application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+          #{appId}
+        </foreach>
+      </if>
+    </where>
+  </select>
+  <select id="getParentMenuByType" resultMap="BaseResultMap">
+    select menu_id,name from upms_menu
+    WHERE
+      <choose>
+          <when test="type==2">
+              type = 1 and application_id = #{applicationId}
+          </when>
+          <when test="type==3">
+              type = 2 and application_id = #{applicationId}
+          </when>
+          <otherwise>
+              1=2
+          </otherwise>
+      </choose>
+  </select>
+  <select id="queryMenusByApplicationId" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM upms_menu
+    WHERE application_id = #{applicationId}
+    order by type, gmt_created desc
+  </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from upms_menu where menu_id = #{menuId}
+    </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from upms_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.Menu" useGeneratedKeys="true" keyProperty="menuId">
+    insert into upms_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="displayOrder != null">
+        display_order,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="permissionString != null">
+        permission_string,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="applicationId != null">
+        application_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null">
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionString != null">
+        #{permissionString,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=INTEGER},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        #{applicationId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.Menu">
+    update upms_menu
+    <set>
+      <if test="name != null and name != ''">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null">
+        display_order = #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionString != null">
+        permission_string = #{permissionString,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=INTEGER},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        application_id = #{applicationId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.Menu">
+    update upms_menu
+    set name = #{name,jdbcType=VARCHAR},
+      display_order = #{displayOrder,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      permission_string = #{permissionString,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      gmt_created = #{gmtCreated,jdbcType=INTEGER},
+      gmt_modified = #{gmtModified,jdbcType=INTEGER},
+      application_id = #{applicationId,jdbcType=INTEGER}
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+
+  <select id="queryMenuDataDimensions" resultType="com.jolly.upms.manager.vo.DataDimensionVO">
+    select mdd.menu_id, dd.dimension_id, dd.display_name, dd.attribute_name, dd.description
+    from upms_menu_data_dimension mdd inner join upms_data_dimension dd on mdd.dimension_id = dd.dimension_id
+    <where>
+      <if test="menuIds!=null">
+        mdd.menu_id in
+        <foreach collection="menuIds" open="(" separator="," close=")" item="menuId">
+          #{menuId}
+        </foreach>
+      </if>
+    </where>
+  </select>
+
+  <select id="queryMenusByMenuGroupId" resultMap="BaseResultMap">
+    SELECT
+    a.menu_id, a.name, a.display_order, a.parent_id, a.url, a.permission_string, a.type, a.gmt_created,
+    a.gmt_modified, a.application_id
+    FROM upms_menu_group_detail detail inner join upms_menu a on detail.menu_id = a.menu_id
+    WHERE detail.menu_group_id = #{menuGroupId}
+  </select>
+
+  <insert id="saveMenuDataDimension" parameterType="com.jolly.upms.manager.model.MenuDataDimension">
+    insert into upms_menu_data_dimension(menu_id, dimension_id) values (#{menuId}, #{dimensionId})
+  </insert>
+
+  <select id="queryByName" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM upms_menu
+    WHERE name = #{name} and application_id = #{applicationId}
+  </select>
+
+  <delete id="deleteMenuDimension">
+    DELETE FROM upms_menu_data_dimension WHERE menu_id = #{menuId}
+  </delete>
+
+  <select id="queryByUrl" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM upms_menu
+    WHERE url = #{url} and application_id = #{applicationId}
+  </select>
+
+  <select id="getChildren" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM upms_menu
+    WHERE parent_id = #{menuId}
+  </select>
+
+</mapper>

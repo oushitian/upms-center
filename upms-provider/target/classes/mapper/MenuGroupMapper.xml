@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.MenuGroupMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.MenuGroup">
+    <id column="menu_group_id" jdbcType="INTEGER" property="menuGroupId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gmt_created" jdbcType="INTEGER" property="gmtCreated" />
+    <result column="application_id" jdbcType="INTEGER" property="applicationId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    menu_group_id, name, gmt_created, application_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from upms_menu_group
+    where menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+  </select>
+  <select id="queryList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from upms_menu_group
+    <where>
+      <if test="name!=null and name!=''">
+        AND name like concat('%' #{name}, '%')
+      </if>
+      <if test="applicationId!=null">
+        AND application_id = #{applicationId}
+      </if>
+      <if test="permitApplicationIds!=null">
+        AND application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+          #{appId}
+        </foreach>
+      </if>
+    </where>
+    order by gmt_created desc, menu_group_id desc
+    <if test="offset!=null">
+      limit #{offset}, #{max}
+    </if>
+  </select>
+
+  <select id="queryCount" resultType="long">
+    select
+    count(*)
+    from upms_menu_group
+    <where>
+      <if test="name!=null and name!=''">
+        AND name like concat('%' #{name}, '%')
+      </if>
+      <if test="applicationId!=null">
+        AND application_id = #{applicationId}
+      </if>
+      <if test="permitApplicationIds!=null">
+        AND application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+          #{appId}
+        </foreach>
+      </if>
+    </where>
+  </select>
+
+  <select id="getByRoleId" resultMap="BaseResultMap">
+    select mg.menu_group_id, name, gmt_created, application_id
+    from upms_menu_group mg inner join upms_role_menu_group rmg on mg.menu_group_id = rmg.menu_group_id
+    where rmg.role_id = #{roleId}
+  </select>
+
+  <select id="queryDataDimensions" resultType="com.jolly.upms.manager.model.DataDimension">
+    select dd.dimension_id, dd.display_name, dd.attribute_name, dd.description, dd.gmt_created, dd.gmt_modified
+    FROM upms_data_dimension dd
+    inner join upms_menu_data_dimension mdd on dd.dimension_id = mdd.dimension_id
+    inner join upms_menu_group_detail gd on gd.menu_id = mdd.menu_id
+    where gd.menu_group_id = #{menuGroupId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from upms_menu_group
+    where menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+  </delete>
+
+  <delete id="deleteRoleMenuGroup">
+    delete from upms_role_menu_group
+    <where>
+      <if test="menuGroupId!=null">
+        and menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+      </if>
+      <if test="roleId!=null">
+        and role_id = #{roleId}
+      </if>
+    </where>
+  </delete>
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.MenuGroup" useGeneratedKeys="true" keyProperty="menuGroupId">
+    insert into upms_menu_group (name, gmt_created,
+      application_id)
+    values (#{name,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=INTEGER},
+      #{applicationId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.MenuGroup">
+    insert into upms_menu_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuGroupId != null">
+        menu_group_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="applicationId != null">
+        application_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuGroupId != null">
+        #{menuGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        #{applicationId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.MenuGroup">
+    update upms_menu_group
+    <set>
+      <if test="name != null and name != ''">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationId != null">
+        application_id = #{applicationId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.MenuGroup">
+    update upms_menu_group
+    set name = #{name,jdbcType=VARCHAR},
+      gmt_created = #{gmtCreated,jdbcType=INTEGER},
+      application_id = #{applicationId,jdbcType=INTEGER}
+    where menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+  </update>
+
+  <select id="getByName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from upms_menu_group
+    where name = #{name} and application_id = #{applicationId}
+  </select>
+
+  <select id="queryRoleMenuGroup" resultType="com.jolly.upms.manager.model.RoleMenuGroup">
+    select
+    role_id, menu_group_id
+    from upms_role_menu_group
+    where menu_group_id = #{menuGroupId}
+  </select>
+</mapper>

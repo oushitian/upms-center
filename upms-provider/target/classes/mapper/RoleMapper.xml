@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.Role">
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gmt_created" jdbcType="INTEGER" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="INTEGER" property="gmtModified" />
+    <result column="application_id" jdbcType="INTEGER" property="applicationId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    role_id, name, gmt_created, gmt_modified, application_id
+  </sql>
+  <select id="queryListByUserId" resultMap="BaseResultMap">
+    select
+    ro.role_id, ro.name, ro.gmt_created, ro.gmt_modified, ro.application_id
+    from upms_role ro INNER JOIN upms_user_role uro
+    ON ro.role_id = uro.role_id
+    where uro.user_id = #{userId}
+    <if test="applicationId!=null">
+      and ro.application_id = #{applicationId}
+    </if>
+  </select>
+
+  <select id="queryList" resultMap="BaseResultMap">
+    select
+    ro.role_id, ro.name, ro.gmt_created, ro.gmt_modified, ro.application_id
+    from upms_role ro
+    <if test="menuGroupId!=null">
+      ,upms_role_menu_group rmg
+    </if>
+    <where>
+      <if test="name!=null and name!=''">
+        and ro.name like concat('%',#{name},'%')
+      </if>
+      <if test="applicationId!=null">
+        and ro.application_id = #{applicationId}
+      </if>
+      <if test="menuGroupId!=null">
+        and rmg.role_id = ro.role_id and rmg.menu_group_id = #{menuGroupId}
+      </if>
+      <if test="roleIds!=null">
+        and ro.role_id in
+        <foreach collection="roleIds" open="(" separator="," close=")" item="roleId">
+          #{roleId}
+        </foreach>
+      </if>
+      <if test="permitApplicationIds!=null">
+        AND ro.application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+          #{appId}
+        </foreach>
+      </if>
+    </where>
+    <choose>
+      <when test="sort!=null and sort!='' and order!=null and order!=''">
+        ORDER BY ro.role_id ${order}
+      </when>
+      <otherwise>
+        order by ro.gmt_created desc, ro.role_id desc
+      </otherwise>
+    </choose>
+    <if test="offset!=null">
+      limit #{offset}, #{max}
+    </if>
+  </select>
+
+  <select id="queryCount" resultType="long">
+    select
+    count(*)
+    from upms_role ro
+    <if test="menuGroupId!=null">
+      ,upms_role_menu_group rmg
+    </if>
+    <where>
+      <if test="name!=null and name!=''">
+        and ro.name like concat('%',#{name},'%')
+      </if>
+      <if test="applicationId!=null">
+        and ro.application_id = #{applicationId}
+      </if>
+      <if test="menuGroupId!=null">
+        and rmg.role_id = ro.role_id and rmg.menu_group_id = #{menuGroupId}
+      </if>
+      <if test="permitApplicationIds!=null">
+        AND ro.application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+          #{appId}
+        </foreach>
+      </if>
+    </where>
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from upms_role
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </delete>
+
+  <delete id="deleteUserRole">
+    delete from upms_user_role
+    <where>
+      <if test="userId!=null">
+        and user_id = #{userId}
+      </if>
+      <if test="roleId!=null">
+        and role_id = #{roleId}
+      </if>
+    </where>
+  </delete>
+
+  <delete id="deleteUserRoleByApplicationId">
+    delete uro from upms_user_role uro INNER JOIN upms_role ro ON uro.role_id = ro.role_id
+    WHERE user_id = #{userId}
+    AND ro.application_id IN
+    <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+      #{appId}
+    </foreach>
+  </delete>
+
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.Role" useGeneratedKeys="true" keyProperty="roleId">
+    insert into upms_role (name, gmt_created,
+      gmt_modified, application_id)
+    values (#{name,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=INTEGER},
+      #{gmtModified,jdbcType=INTEGER}, #{applicationId,jdbcType=INTEGER})
+  </insert>
+
+  <insert id="saveUserRole" parameterType="com.jolly.upms.manager.model.UserRole">
+    insert into upms_user_role (user_id,role_id)
+    values (#{userId},#{roleId})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.Role">
+    insert into upms_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="applicationId != null">
+        application_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=INTEGER},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        #{applicationId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.Role">
+    update upms_role
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=INTEGER},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        application_id = #{applicationId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.Role">
+    update upms_role
+    set name = #{name,jdbcType=VARCHAR},
+      gmt_created = #{gmtCreated,jdbcType=INTEGER},
+      gmt_modified = #{gmtModified,jdbcType=INTEGER},
+      application_id = #{applicationId,jdbcType=INTEGER}
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </update>
+
+  <insert id="saveRoleMenuGroup" parameterType="com.jolly.upms.manager.model.RoleMenuGroup">
+    insert into upms_role_menu_group (role_id, menu_group_id)
+    values (#{roleId}, #{menuGroupId})
+  </insert>
+
+  <select id="getRoleByName" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM upms_role
+    WHERE name = #{name} and application_id = #{applicationId}
+  </select>
+
+  <select id="queryUserRole" resultType="com.jolly.upms.manager.model.UserRole">
+    SELECT
+    user_id, role_id
+    FROM upms_user_role
+    WHERE role_id = #{roleId}
+  </select>
+
+  <select id="queryUserRoles" resultType="com.jolly.upms.manager.vo.UserRoleVO">
+    select
+    ur.role_id, u.user_id, u.user_name
+    from upms_user_role ur inner join upms_user u on u.user_id = ur.user_id where u.is_deleted = 0
+    and ur.role_id in
+    <foreach collection="roleIds" item="item" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+    <if test="userId!=null">
+      and ur.user_id = #{userId}
+    </if>
+  </select>
+
+</mapper>

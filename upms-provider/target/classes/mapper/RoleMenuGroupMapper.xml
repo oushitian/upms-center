@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace=".RoleMenuGroupMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.RoleMenuGroup">
+    <id column="role_id" jdbcType="INTEGER" property="roleId" />
+    <id column="menu_group_id" jdbcType="INTEGER" property="menuGroupId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.jolly.upms.manager.model.RoleMenuGroup">
+    delete from upms_role_menu_group
+    where role_id = #{roleId,jdbcType=INTEGER}
+      and menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.RoleMenuGroup">
+    insert into upms_role_menu_group (role_id, menu_group_id)
+    values (#{roleId,jdbcType=INTEGER}, #{menuGroupId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.RoleMenuGroup">
+    insert into upms_role_menu_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="menuGroupId != null">
+        menu_group_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="menuGroupId != null">
+        #{menuGroupId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

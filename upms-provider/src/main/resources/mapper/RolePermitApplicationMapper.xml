@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.RolePermitApplicationMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.RolePermitApplication">
+    <id column="rec_id" jdbcType="INTEGER" property="recId" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="application_id" jdbcType="INTEGER" property="applicationId" />
+    <result column="gmt_created" jdbcType="INTEGER" property="gmtCreated" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rec_id, role_id, application_id, gmt_created
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from upms_role_permit_application
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </select>
+  <select id="getByRoleId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from upms_role_permit_application
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </select>
+  <select id="queryList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from upms_role_permit_application
+    where role_id IN
+    <foreach collection="roleIds" item="roleId" open="(" close=")" separator=",">
+      #{roleId}
+    </foreach>
+  </select>
+  <delete id="deleteByRoleId" parameterType="java.lang.Integer">
+    delete from upms_role_permit_application
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.RolePermitApplication">
+    insert into upms_role_permit_application (rec_id, role_id, application_id, 
+      gmt_created)
+    values (#{recId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}, #{applicationId,jdbcType=INTEGER}, 
+      #{gmtCreated,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.RolePermitApplication">
+    insert into upms_role_permit_application
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="recId != null">
+        rec_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="applicationId != null">
+        application_id,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="recId != null">
+        #{recId,jdbcType=INTEGER},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        #{applicationId,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.RolePermitApplication">
+    update upms_role_permit_application
+    <set>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="applicationId != null">
+        application_id = #{applicationId,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.RolePermitApplication">
+    update upms_role_permit_application
+    set role_id = #{roleId,jdbcType=INTEGER},
+      application_id = #{applicationId,jdbcType=INTEGER},
+      gmt_created = #{gmtCreated,jdbcType=INTEGER}
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+</mapper>

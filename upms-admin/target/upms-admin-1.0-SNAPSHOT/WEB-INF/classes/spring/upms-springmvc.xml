@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/mvc
+						http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="jolly.upms.admin.web.controller"/>
+    <!--静态文件处理-->
+    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:view-controller path="/" view-name="forward:/index"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 指定所上传文件的总大小不能超过20M -->
+        <property name="maxUploadSize" value="20480000"/>
+    </bean>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <!--json日期格式化默认设置-->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="jolly.upms.admin.common.dataobject.JsonObjectMapper">
+                        <property name="dateFormat">
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="viewResolvers">
+            <list>
+                <!--视图解析器 -->
+                <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+                    <!--<property name="viewClass"  value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>-->
+                    <property name="suffix" value=".ftl"/>
+                    <property name="contentType" value="text/html;charset=utf-8"/>
+                    <property name="requestContextAttribute" value="rc"/>
+                    <property name="exposeRequestAttributes" value="true"/>
+                    <!--不暴露session数据给view使用-->
+                    <property name="exposeSessionAttributes" value="false"/>
+                    <property name="exposeSpringMacroHelpers" value="true"/>
+                </bean>
+            </list>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <!-- 输出为JSON数据 -->
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">10</prop>
+                <prop key="locale">zh_CN</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="date_format">yyyy-MM-dd</prop>
+                <prop key="number_format">#.##</prop>
+            </props>
+        </property>
+    </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/api/**"/>
+            <mvc:exclude-mapping path="/api/loginUI"/>
+            <mvc:exclude-mapping path="/api/logout"/>
+            <mvc:exclude-mapping path="/api/hasPermission"/>
+            <bean class="jolly.upms.admin.web.interceptor.ApiInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/auth/login"/>
+            <bean class="jolly.upms.admin.web.interceptor.LoginSignValid"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/auth/accessToken"/>
+            <bean class="jolly.upms.admin.web.interceptor.AccessTokenValid"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/auth/addUser"/>
+            <bean class="jolly.upms.admin.web.interceptor.AddUserValid"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="/api/**"/>
+            <mvc:exclude-mapping path="/auth/**"/>
+            <mvc:exclude-mapping path="/authenticationAccess/*"/>
+            <mvc:exclude-mapping path="/"/>
+            <bean class="jolly.upms.admin.web.interceptor.UpmsAccessInterceptor">
+                <property name="onlyNeedValidateTokenUrls">
+                    <set>
+                        <value>/user/getPermitApp</value>
+                        <value>/index</value>
+                        <value>/logout</value>
+                        <value>/refuse</value>
+                    </set>
+                </property>
+            </bean>
+        </mvc:interceptor>
+        <bean class="jolly.upms.admin.web.interceptor.UpmsWebInterceptor"/>
+    </mvc:interceptors>
+</beans>

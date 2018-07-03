@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jolly.upms.manager.model.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.User" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="add_time" property="addTime" jdbcType="INTEGER" />
+    <result column="last_login" property="lastLogin" jdbcType="INTEGER" />
+    <result column="last_ip" property="lastIp" jdbcType="VARCHAR" />
+    <result column="is_deleted" property="isDeleted" jdbcType="TINYINT" />
+    <result column="filiale_id" property="filialeId" jdbcType="INTEGER" />
+    <result column="is_supp_user" property="isSuppUser" jdbcType="TINYINT" />
+    <result column="supp_code" property="suppCode" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    user_id, user_name, email, password, add_time, last_login, last_ip, is_deleted, filiale_id, 
+    is_supp_user, supp_code
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from upms_user
+    where is_deleted = 0 and user_id = #{userId,jdbcType=INTEGER}
+  </select>
+
+    <select id="queryUserMenus" resultType="com.jolly.upms.manager.model.UserMenu">
+        select
+        user_id, menu_id
+        from upms_user_menu
+        where menu_id = #{menuId}
+    </select>
+
+    <select id="getUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from upms_user
+        where user_id = #{userId,jdbcType=INTEGER}
+        <if test="includeDeleted == null or includeDeleted == false">
+            AND is_deleted = 0
+        </if>
+    </select>
+
+    <insert id="insert" parameterType="com.jolly.upms.manager.model.User" useGeneratedKeys="true" keyProperty="userId">
+        insert into upms_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="addTime != null">
+                add_time,
+            </if>
+            <if test="lastLogin != null">
+                last_login,
+            </if>
+            <if test="lastIp != null">
+                last_ip,
+            </if>
+            <if test="navList != null">
+                nav_list,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
+            </if>
+            <if test="filialeId != null">
+                filiale_id,
+            </if>
+            <if test="isSuppUser != null">
+                is_supp_user,
+            </if>
+            <if test="suppCode != null">
+                supp_code,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=CHAR},
+            </if>
+            <if test="addTime != null">
+                #{addTime,jdbcType=INTEGER},
+            </if>
+            <if test="lastLogin != null">
+                #{lastLogin,jdbcType=INTEGER},
+            </if>
+            <if test="lastIp != null">
+                #{lastIp,jdbcType=VARCHAR},
+            </if>
+            <if test="navList != null">
+                #{navList,jdbcType=VARCHAR},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=TINYINT},
+            </if>
+            <if test="filialeId != null">
+                #{filialeId,jdbcType=INTEGER},
+            </if>
+            <if test="isSuppUser != null">
+                #{isSuppUser,jdbcType=TINYINT},
+            </if>
+            <if test="suppCode != null">
+                #{suppCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.User">
+        update upms_user
+        <set>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=CHAR},
+            </if>
+            <if test="addTime != null">
+                add_time = #{addTime,jdbcType=INTEGER},
+            </if>
+            <if test="lastLogin != null">
+                last_login = #{lastLogin,jdbcType=INTEGER},
+            </if>
+            <if test="lastIp != null">
+                last_ip = #{lastIp,jdbcType=VARCHAR},
+            </if>
+            <if test="navList != null">
+                nav_list = #{navList,jdbcType=VARCHAR},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
+            </if>
+            <if test="filialeId != null">
+                filiale_id = #{filialeId,jdbcType=INTEGER},
+            </if>
+            <if test="isSuppUser != null">
+                is_supp_user = #{isSuppUser,jdbcType=TINYINT},
+            </if>
+            <if test="suppCode != null">
+                supp_code = #{suppCode,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
+
+  <select id="queryByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from upms_user
+    where is_deleted = 0 and user_name = #{value,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryUserPermissions" resultType="com.jolly.upms.manager.vo.PermissionDO">
+    select
+    permission_string, attribute_name, attribute_values
+    from upms_user_permission
+    where user_id = #{userId} and application_id = #{applicationId}
+  </select>
+
+    <select id="queryRolePermissions" resultType="com.jolly.upms.manager.vo.PermissionDO">
+        select
+        rp.permission_string, rp.attribute_name, rp.attribute_values
+        from upms_role_permission rp inner join upms_role ro on rp.role_id = ro.role_id
+        where rp.role_id = #{roleId}
+        <if test="applicationId!=null">
+            and ro.application_id = #{applicationId}
+        </if>
+    </select>
+
+    <select id="queryList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from upms_user u where is_deleted = 0
+        <if test="userName!=null and userName!=''">
+            AND user_name LIKE CONCAT('%', #{userName}, '%')
+        </if>
+        <if test="fullUserName!=null and fullUserName!=''">
+            AND user_name = #{fullUserName}
+        </if>
+        <if test="email!=null and email!=''">
+            AND email = #{email}
+        </if>
+        <if test="roleName!=null and roleName!=''">
+            AND EXISTS (SELECT * FROM upms_role ro INNER JOIN upms_user_role ur ON ro.role_id = ur.role_id WHERE
+            u.user_id = ur.user_id and ro.name = #{roleName})
+        </if>
+        <if test="applicationId!=null">
+            AND (EXISTS (SELECT 1 FROM upms_user_menu um INNER JOIN upms_menu m ON um.menu_id = m.menu_id WHERE u.user_id = um.user_id AND m.application_id = #{applicationId})
+            OR EXISTS (SELECT 1 FROM upms_user_role ur INNER JOIN upms_role ro ON ro.role_id = ur.role_id WHERE u.user_id = ur.user_id AND ro.application_id = #{applicationId}))
+        </if>
+        <if test="privilege!=null">
+            <choose>
+                <when test="privilege==1">
+                    AND EXISTS (SELECT 1 FROM upms_user_menu um WHERE u.user_id = um.user_id)
+                </when>
+                <otherwise>
+                    AND NOT EXISTS (SELECT 1 FROM upms_user_menu um WHERE u.user_id = um.user_id)
+                </otherwise>
+            </choose>
+        </if>
+        <if test="offset!=null">
+            order by u.add_time desc, u.user_id desc
+            limit #{offset}, #{max}
+        </if>
+    </select>
+
+    <select id="queryCount" resultType="long">
+        select
+        count(*)
+        from upms_user u where is_deleted = 0
+        <if test="userName!=null and userName!=''">
+            AND user_name LIKE CONCAT('%', #{userName}, '%')
+        </if>
+        <if test="fullUserName!=null and fullUserName!=''">
+            AND user_name = #{fullUserName}
+        </if>
+        <if test="email!=null and email!=''">
+            AND email = #{email}
+        </if>
+        <if test="roleName!=null and roleName!=''">
+            AND EXISTS (SELECT * FROM upms_role ro INNER JOIN upms_user_role ur ON ro.role_id = ur.role_id WHERE
+            u.user_id = ur.user_id and ro.name = #{roleName})
+        </if>
+        <if test="applicationId!=null">
+            AND (EXISTS (SELECT 1 FROM upms_user_menu um INNER JOIN upms_menu m ON um.menu_id = m.menu_id WHERE u.user_id = um.user_id AND m.application_id = #{applicationId})
+            OR EXISTS (SELECT 1 FROM upms_user_role ur INNER JOIN upms_role ro ON ro.role_id = ur.role_id WHERE u.user_id = ur.user_id AND ro.application_id = #{applicationId}))
+        </if>
+        <if test="privilege!=null">
+            <choose>
+                <when test="privilege==1">
+                    AND EXISTS (SELECT 1 FROM upms_user_menu um WHERE u.user_id = um.user_id)
+                </when>
+                <otherwise>
+                    AND NOT EXISTS (SELECT 1 FROM upms_user_menu um WHERE u.user_id = um.user_id)
+                </otherwise>
+            </choose>
+        </if>
+    </select>
+
+    <delete id="deleteUserMenu">
+        delete from upms_user_menu where user_id = #{userId}
+    </delete>
+
+    <delete id="deleteUserPermission">
+        delete from upms_user_permission where user_id = #{userId}
+    </delete>
+
+    <delete id="deleteUserMenuByApplicationId">
+        delete um from upms_user_menu um INNER JOIN upms_menu m ON um.menu_id = m.menu_id
+        WHERE user_id = #{userId}
+        AND m.application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+            #{appId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteUserPermissionByApplicationId">
+        delete from upms_user_permission where user_id = #{userId}
+        AND application_id IN
+        <foreach collection="permitApplicationIds" item="appId" open="(" close=")" separator=",">
+            #{appId}
+        </foreach>
+    </delete>
+
+    <insert id="saveUserMenu" parameterType="com.jolly.upms.manager.model.UserMenu">
+        INSERT INTO upms_user_menu(user_id,menu_id)
+        values(#{userId},#{menuId})
+    </insert>
+
+    <select id="queryByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from upms_user
+        where is_deleted = 0 and email = #{email,jdbcType=VARCHAR}
+    </select>
+
+    <update id="updatePassword" parameterType="map">
+        update upms_user set `password` = #{newPassword}
+        where user_id = #{userId} and password = #{password}
+    </update>
+
+    <select id="getUserListByUserIds" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from upms_user  where is_deleted = 0
+        <if test="list != null and  list.size() > 0">
+         and user_id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        </if>
+    </select>
+
+    <select id="queryUserByRoleIds" resultMap="BaseResultMap">
+        select
+        DISTINCT u.user_id,u.user_name,u.supp_code
+        from upms_user u inner join upms_user_role ur on u.user_id = ur.user_id where is_deleted = 0
+        and ur.role_id in
+        <foreach collection="roleIds" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <update id="resumeOrDelSuppUser">
+        update upms_user
+        set is_deleted=#{isDeleted}
+        where supp_code=#{suppCode} and is_supp_user=1
+    </update>
+
+</mapper>

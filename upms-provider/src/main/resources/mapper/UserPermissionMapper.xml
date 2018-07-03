@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.UserPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.UserPermission">
+    <id column="rec_id" jdbcType="INTEGER" property="recId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="permission_string" jdbcType="VARCHAR" property="permissionString" />
+    <result column="attribute_name" jdbcType="VARCHAR" property="attributeName" />
+    <result column="attribute_values" jdbcType="VARCHAR" property="attributeValues" />
+    <result column="application_id" jdbcType="INTEGER" property="applicationId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rec_id, user_id, permission_string, attribute_name, attribute_values, application_id
+  </sql>
+
+  <select id="queryList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from upms_user_permission
+    <where>
+      <if test="userId!=null">
+        and user_id = #{userId}
+      </if>
+    </where>
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from upms_user_permission
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from upms_user_permission
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.UserPermission">
+    insert into upms_user_permission (rec_id, user_id, permission_string, 
+      attribute_name, attribute_values, application_id
+      )
+    values (#{recId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{permissionString,jdbcType=VARCHAR}, 
+      #{attributeName,jdbcType=VARCHAR}, #{attributeValues,jdbcType=VARCHAR}, #{applicationId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.UserPermission">
+    insert into upms_user_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="permissionString != null">
+        permission_string,
+      </if>
+      <if test="attributeName != null">
+        attribute_name,
+      </if>
+      <if test="attributeValues != null">
+        attribute_values,
+      </if>
+      <if test="applicationId != null">
+        application_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="permissionString != null">
+        #{permissionString,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeName != null">
+        #{attributeName,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeValues != null">
+        #{attributeValues,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationId != null">
+        #{applicationId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jolly.upms.manager.model.UserPermission">
+    update upms_user_permission
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="permissionString != null">
+        permission_string = #{permissionString,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeName != null">
+        attribute_name = #{attributeName,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeValues != null">
+        attribute_values = #{attributeValues,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationId != null">
+        application_id = #{applicationId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jolly.upms.manager.model.UserPermission">
+    update upms_user_permission
+    set user_id = #{userId,jdbcType=INTEGER},
+      permission_string = #{permissionString,jdbcType=VARCHAR},
+      attribute_name = #{attributeName,jdbcType=VARCHAR},
+      attribute_values = #{attributeValues,jdbcType=VARCHAR},
+      application_id = #{applicationId,jdbcType=INTEGER}
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+
+  <select id="getApplicationIdsByUserId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select
+    application_id
+    from upms_user_permission
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+
+</mapper>

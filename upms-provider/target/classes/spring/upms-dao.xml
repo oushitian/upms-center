@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:property-placeholder location="classpath:config/upms-dao.properties" ignore-resource-not-found="true"
+                                  ignore-unresolvable="true"/>
+
+    <context:component-scan base-package="com.jolly.upms.manager.dao"/>
+
+    <bean id="dataSource_write" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${url_upms}"/>
+        <property name="username" value="${user_upms}"/>
+        <property name="password" value="${password_upms}"/>
+        <property name="initialSize" value="${upms.initialPoolSize}"/>
+        <property name="minIdle" value="${upms.minPoolSize}"/>
+        <property name="maxActive" value="${upms.maxPoolSize}"/>
+        <property name="maxWait" value="${upms.maxIdleTime}"/>
+        <property name="useUnfairLock" value="true"/>
+
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="SELECT 'x'"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+
+        <property name="poolPreparedStatements" value="${upms.poolPreparedStatements}"/>
+        <property name="maxOpenPreparedStatements" value="${upms.maxOpenPreparedStatements}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="${upms.maxPoolPreparedStatementPerConnectionSize}"/>
+
+        <property name="filters" value="stat"/>
+    </bean>
+
+    <!--MyBatis 配置-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="dataSource" ref="dataSource_write"/>
+    </bean>
+
+    <!--mybatis sqlSession配置-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- 对数据源进行事务管理 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="dataSource_write"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--who_brand库-->
+    <bean id="dataSource_who_brand" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${url_whoBrand}"/>
+        <property name="username" value="${user_whoBrand}"/>
+        <property name="password" value="${password_whoBrand}"/>
+        <property name="initialSize" value="${whoBrand.initialPoolSize}"/>
+        <property name="minIdle" value="${whoBrand.minPoolSize}"/>
+        <property name="maxActive" value="${whoBrand.maxPoolSize}"/>
+        <property name="maxWait" value="${whoBrand.maxIdleTime}"/>
+        <property name="useUnfairLock" value="true"/>
+
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="SELECT 'x'"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+
+        <property name="poolPreparedStatements" value="${whoBrand.poolPreparedStatements}"/>
+        <property name="maxOpenPreparedStatements" value="${whoBrand.maxOpenPreparedStatements}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="${whoBrand.maxPoolPreparedStatementPerConnectionSize}"/>
+
+        <property name="filters" value="stat"/>
+    </bean>
+
+    <!--MyBatis 配置-->
+    <bean id="whoBrandSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/whobrand/*.xml"/>
+        <property name="dataSource" ref="dataSource_who_brand"/>
+    </bean>
+
+    <!--mybatis sqlSession配置-->
+    <bean id="whoBrandSqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="whoBrandSqlSessionFactory"/>
+    </bean>
+
+    <!--who_brand写库-->
+    <bean id="dataSource_who_brand_write" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${url_whoBrand_write}"/>
+        <property name="username" value="${user_whoBrand_write}"/>
+        <property name="password" value="${password_whoBrand_write}"/>
+        <property name="initialSize" value="${whoBrand.initialPoolSize}"/>
+        <property name="minIdle" value="${whoBrand.minPoolSize}"/>
+        <property name="maxActive" value="${whoBrand.maxPoolSize}"/>
+        <property name="maxWait" value="${whoBrand.maxIdleTime}"/>
+        <property name="useUnfairLock" value="true"/>
+
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="SELECT 'x'"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+
+        <property name="poolPreparedStatements" value="${whoBrand.poolPreparedStatements}"/>
+        <property name="maxOpenPreparedStatements" value="${whoBrand.maxOpenPreparedStatements}"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="${whoBrand.maxPoolPreparedStatementPerConnectionSize}"/>
+
+        <property name="filters" value="stat"/>
+    </bean>
+
+    <!--MyBatis 配置-->
+    <bean id="whoBrandWriteSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/whobrand/*.xml"/>
+        <property name="dataSource" ref="dataSource_who_brand_write"/>
+    </bean>
+
+    <!--mybatis sqlSession配置-->
+    <bean id="whoBrandWriteSqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="whoBrandWriteSqlSessionFactory"/>
+    </bean>
+</beans>

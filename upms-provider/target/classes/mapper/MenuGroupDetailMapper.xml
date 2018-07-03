@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jolly.upms.manager.model.MenuGroupDetailMapper">
+  <resultMap id="BaseResultMap" type="com.jolly.upms.manager.model.MenuGroupDetail">
+    <id column="menu_group_id" jdbcType="INTEGER" property="menuGroupId" />
+    <id column="menu_id" jdbcType="INTEGER" property="menuId" />
+  </resultMap>
+  <select id="queryList" resultMap="BaseResultMap">
+    SELECT menu_group_id, menu_id FROM upms_menu_group_detail WHERE menu_id = #{menuId}
+  </select>
+  <delete id="deleteByMenuGroupId">
+    delete from upms_menu_group_detail
+    where menu_group_id = #{menuGroupId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jolly.upms.manager.model.MenuGroupDetail">
+    insert into upms_menu_group_detail (menu_group_id, menu_id)
+    values (#{menuGroupId,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jolly.upms.manager.model.MenuGroupDetail">
+    insert into upms_menu_group_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuGroupId != null">
+        menu_group_id,
+      </if>
+      <if test="menuId != null">
+        menu_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuGroupId != null">
+        #{menuGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="menuId != null">
+        #{menuId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
