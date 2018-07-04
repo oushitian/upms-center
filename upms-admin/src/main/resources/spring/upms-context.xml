@@ -5,10 +5,12 @@
        default-autowire="byName">
     <context:property-placeholder location="classpath:config/upms*.properties,classpath:config/upms-production.properties" ignore-resource-not-found="true"
                                   ignore-unresolvable="true" />
-
+    <!--该注释用于测试使用-->
+    <context:component-scan base-package="jolly.upms.admin.web.controller.event"/>
     <import resource="classpath:spring/upms-bean.xml"/>
     <import resource="classpath:spring/upms-redis.xml"/>
     <import resource="classpath:spring/upms-redis-overseas.xml"/>
+    <!--该注释用于开启dubbo服务-->
     <import resource="classpath:spring/upms-dubbo-provider.xml"/>
     <!--暂时去除-->
     <!--<import resource="classpath:spring/upms-redis-cluster.xml"/>-->
