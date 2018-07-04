@@ -7,41 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="794f77d7-964f-44d5-b433-2f38048fb696" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/AbstractEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/EventConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/EventHandlerSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/Eventors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/SimpleGroupEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/SimpleSingleEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/anno/EventGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/anno/EventName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/context/BaseEventContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/context/GroupEventContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/context/SingleEventContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/DemoHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/DemoHandler1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/SimpleDemoEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/message/DemoMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/utils/ClassUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upms-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upms-admin/target/classes/spring/upms-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upms-admin/target/classes/spring/upms-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-admin/target/upms-admin-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-admin/target/upms-admin-1.0-SNAPSHOT/WEB-INF/lib/upms-facade-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-admin/target/upms-admin-1.0-SNAPSHOT/WEB-INF/lib/upms-provider-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/upms-admin/target/upms-admin-1.0-SNAPSHOT/WEB-INF/lib/upms-provider-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-api/target/classes/com/jolly/upms/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-provider/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/upms-provider/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-provider/target/upms-provider-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/upms-provider/target/upms-provider-1.0-SNAPSHOT-sources.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-provider/target/upms-provider-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/upms-provider/target/upms-provider-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,13 +25,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/upms_center$TestHeapGC_permGenGC.ic" NAME="TestHeapGC.permGenGC Coverage Results" MODIFIED="1530687933331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>jvmDemo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/upms_center$TestStack.ic" NAME="TestStack Coverage Results" MODIFIED="1530684995849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>jvmDemo.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Eventors.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/Eventors.java">
+      <file leaf-file-name="TestStack.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="152" selection-start-line="152" selection-end-line="152" />
+            <state relative-caret-position="126">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+              <folding>
+                <element signature="e#480#481#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestHeapGC.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,98 +69,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/AuthController.java">
+      <file leaf-file-name="TestHeapFullGC.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="45" column="4" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticationAccessController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/AuthenticationAccessController.java">
+      <file leaf-file-name="ApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/api/ApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/test/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SingleDemo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleSingleEventHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/SimpleSingleEventHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SingleDemo2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoMessage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/message/DemoMessage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpmsAccessInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/interceptor/UpmsAccessInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upms-context.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+            <state relative-caret-position="-584">
+              <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -195,9 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/upms-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/interceptor/AddUserValid.java" />
-        <option value="$PROJECT_DIR$/upms-provider/src/main/java/com/jolly/upms/manager/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/common/base/interceptor/SignValid.java" />
         <option value="$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/util/httpclient/config/Config.java" />
         <option value="$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/dto/BatchDataPermissionReqDTO.java" />
@@ -242,10 +161,13 @@
         <option value="$PROJECT_DIR$/upms-admin/pom.xml" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/Eventors.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-springmvc.xml" />
-        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo2.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/test/Test.java" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" />
+        <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java" />
+        <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java" />
+        <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java" />
       </list>
     </option>
   </component>
@@ -336,160 +258,7 @@
               <item name="upms-center" type="462c0819:PsiDirectoryNode" />
               <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="single" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jolly" type="462c0819:PsiDirectoryNode" />
-              <item name="upms" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
-              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
-              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
@@ -497,6 +266,7 @@
               <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="jvmDemo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -511,6 +281,9 @@
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -538,9 +311,56 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Test.testSingle">
+  <component name="RunManager" selected="Tomcat Server.upms-center">
+    <configuration name="TestHeapFullGC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvmDemo.TestHeapFullGC" />
+      <module name="upms-admin" />
+      <option name="VM_PARAMETERS" value="-Xmx11M -Xms11M -verbose:gc" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvmDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TestHeapGC" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvmDemo.TestHeapGC" />
+      <module name="upms-admin" />
+      <option name="VM_PARAMETERS" value="-XX:PermSize=2M -XX:MaxPermSize=4M -XX:+PrintGCDetails" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvmDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="TestHeapGC.permGenGC" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="upms-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvmDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="jvmDemo" />
+      <option name="MAIN_CLASS_NAME" value="jvmDemo.TestHeapGC" />
+      <option name="METHOD_NAME" value="permGenGC" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-XX:PermSize=2M -XX:MaxPermSize=4M -XX:+PrintGCDetails" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="Test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="upms-admin" />
@@ -687,12 +507,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestHeapGC" />
       <item itemvalue="Tomcat Server.upms-center" />
+      <item itemvalue="Application.TestHeapFullGC" />
       <item itemvalue="JUnit.Test.test" />
       <item itemvalue="JUnit.Test.testSingle" />
+      <item itemvalue="JUnit.TestHeapGC.permGenGC" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestHeapFullGC" />
+        <item itemvalue="JUnit.TestHeapGC.permGenGC" />
         <item itemvalue="JUnit.Test.testSingle" />
         <item itemvalue="JUnit.Test.test" />
       </list>
@@ -708,20 +533,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530602174877</updated>
-      <workItem from="1530602176531" duration="22764000" />
+      <workItem from="1530602176531" duration="33218000" />
     </task>
+    <task id="LOCAL-00001" summary="提交事件代码">
+      <created>1530684148824</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530684148824</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_test - 2018.07.04 at 11h 18m 29s.xml">
-      <configuration name="Test.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Test_test - 2018.07.04 at 11h 20m 05s.xml">
-      <configuration name="Test.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Test_test - 2018.07.04 at 11h 21m 18s.xml">
-      <configuration name="Test.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Test_test - 2018.07.04 at 11h 39m 56s.xml">
       <configuration name="Test.test" configurationId="JUnit" />
     </history-entry>
@@ -740,9 +564,21 @@
     <history-entry file="Test_testSingle - 2018.07.04 at 13h 58m 05s.xml">
       <configuration name="Test.testSingle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Test_testSingle - 2018.07.04 at 14h 00m 11s.xml">
+      <configuration name="Test.testSingle" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestHeapGC_permGenGC - 2018.07.04 at 15h 05m 11s.xml">
+      <configuration name="TestHeapGC.permGenGC" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestHeapGC_permGenGC - 2018.07.04 at 15h 05m 49s.xml">
+      <configuration name="TestHeapGC.permGenGC" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestHeapGC_permGenGC - 2018.07.04 at 15h 06m 46s.xml">
+      <configuration name="TestHeapGC.permGenGC" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22764000" />
+    <option name="totallyTimeSpent" value="33218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -760,18 +596,19 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.25503355" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" weight="0.24049217" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25503355" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2080537" />
       <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32995737" />
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24786781" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18603411" />
       <window_info anchor="right" id="Bean Validation" />
       <window_info id="Web" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
@@ -789,14 +626,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="提交事件代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交事件代码" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/IndexController.java</url>
-          <line>72</line>
-          <properties />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/Eventors.java</url>
           <line>123</line>
@@ -820,17 +656,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/upms-provider/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-provider/src/main/resources/mapper/RolePermitApplicationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1256" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jolly_upms.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/upms-provider/src/main/resources/config/upms-dao.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -883,16 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="43" column="20" lean-forward="true" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upms-api/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
@@ -930,13 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/api/ApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1098,13 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="70" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upms-admin/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -1136,16 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/interceptor/UpmsAccessInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-springmvc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1153,31 +944,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml">
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/Eventors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+        <state relative-caret-position="237">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/message/DemoMessage.java">
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/SimpleSingleEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="324">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1194,32 +974,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="493">
+          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="70" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/interceptor/UpmsAccessInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/Eventors.java">
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/message/DemoMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
+        <state relative-caret-position="144">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/SimpleSingleEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/api/ApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-584">
+          <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>upms-admin:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>upms-admin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
