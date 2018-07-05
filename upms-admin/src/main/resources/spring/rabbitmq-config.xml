@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <rabbit:connection-factory id="connectionFactory"
+                               host="${rabbitmq.proxy}" port="${rabbitmq.proxy.port}"
+                               username="guest" password="guest"/>
+
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" retry-template="retryTemplate"
+                     exchange="user"/>
+
+    <bean id="retryTemplate" class="org.springframework.retry.support.RetryTemplate">
+        <property name="backOffPolicy">
+            <bean class="org.springframework.retry.backoff.ExponentialBackOffPolicy">
+                <property name="initialInterval" value="1000"/>
+                <property name="multiplier" value="10.0"/>
+                <property name="maxInterval" value="10000"/>
+            </bean>
+        </property>
+        <property name="retryPolicy">
+            <bean class="org.springframework.retry.policy.SimpleRetryPolicy">
+                <property name="maxAttempts" value="3"/>
+            </bean>
+        </property>
+    </bean>
+
+    <rabbit:admin id="admin" connection-factory="connectionFactory"/>
+
+    <rabbit:topic-exchange name="message.service.topic" durable="true" declared-by="admin">
+        <rabbit:bindings>
+            <rabbit:binding queue="message.service.push" pattern="message.service.push"/>
+        </rabbit:bindings>
+    </rabbit:topic-exchange>
+
+    <rabbit:queue name="message.service.push" durable="true"/>
+
+    <rabbit:listener-container connection-factory="connectionFactory" concurrency="${rabbitmq.concurrency}" max-concurrency="${rabbitmq.concurrency}" acknowledge="manual"  >
+        <rabbit:listener ref="pushMessageListener" queue-names="message.service.push"/>
+    </rabbit:listener-container>
+
+</beans>

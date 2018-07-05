@@ -7,11 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="794f77d7-964f-44d5-b433-2f38048fb696" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/BaseListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/PushMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/resources/config/rabbitmq.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbit-listen.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbitmq-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upms-admin/target/classes/spring/upms-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upms-admin/target/classes/spring/upms-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,34 +36,75 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TestStack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+            <state relative-caret-position="468">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
-                <element signature="e#480#481#0" expanded="true" />
-                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#655#656#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestHeapGC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java">
+      <file leaf-file-name="AuthenticationAccessController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/AuthenticationAccessController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state relative-caret-position="-486">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/IndexController.java">
+      <file leaf-file-name="rabbitmq.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/config/rabbitmq.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="26" selection-start-column="26" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rabbitmq-config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbitmq-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="31" column="55" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="55" />
+              <folding>
+                <element signature="e#552#571#0" expanded="true" />
+                <element signature="e#577#601#0" expanded="true" />
+                <element signature="e#1963#1988#0" expanded="true" />
+                <element signature="e#2005#2030#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rabbit-listen.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbit-listen.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PushMessageListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/PushMessageListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/BaseListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="66" column="60" lean-forward="true" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,20 +112,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestHeapFullGC.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java">
+      <file leaf-file-name="MessageProperties.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/maven_repository/com/rabbitmq/amqp-client/3.5.6/amqp-client-3.5.6.jar!/com/rabbitmq/client/MessageProperties.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state relative-caret-position="216">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/api/ApiController.java">
+      <file leaf-file-name="upms-context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-584">
-              <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+            <state relative-caret-position="396">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -105,6 +148,7 @@
       <find>scan</find>
       <find>spring-test</find>
       <find>profile</find>
+      <find>pushMessageListener</find>
     </findStrings>
     <dirStrings>
       <dir>D:\ideaProject\upms-center</dir>
@@ -117,11 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/common/base/interceptor/SignValid.java" />
-        <option value="$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/util/httpclient/config/Config.java" />
-        <option value="$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/dto/BatchDataPermissionReqDTO.java" />
-        <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/common/util/MenuUtil.java" />
-        <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/menu/MenuController.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/menu/vo/MenuParamVO.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/application/ApplicationController.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/datadimension/DataDimensionController.java" />
@@ -164,10 +203,15 @@
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/event/handler/single/SingleDemo2.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/test/Test.java" />
-        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" />
-        <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java" />
         <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java" />
+        <option value="$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbitmq.properties" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbitmq-config.xml" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbit-listen.xml" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/BaseListener.java" />
+        <option value="$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/PushMessageListener.java" />
       </list>
     </option>
   </component>
@@ -233,8 +277,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,21 +303,106 @@
               <item name="upms-center" type="462c0819:PsiDirectoryNode" />
               <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
               <item name="upms-center" type="462c0819:PsiDirectoryNode" />
               <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="jvmDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jolly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jolly" type="462c0819:PsiDirectoryNode" />
+              <item name="upms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jolly" type="462c0819:PsiDirectoryNode" />
+              <item name="upms" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jolly" type="462c0819:PsiDirectoryNode" />
+              <item name="upms" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jolly" type="462c0819:PsiDirectoryNode" />
+              <item name="upms" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jolly" type="462c0819:PsiDirectoryNode" />
+              <item name="upms" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="listen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="upms-center" type="b2602c69:ProjectViewProjectNode" />
+              <item name="upms-center" type="462c0819:PsiDirectoryNode" />
+              <item name="upms-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,16 +417,17 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaProject\upms-center\upms-admin\src" />
-      <recent name="D:\ideaProject\upms-center\upms-admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaProject\upms-center\upms-admin\src\main\resources\spring" />
+      <recent name="D:\ideaProject\upms-center" />
       <recent name="D:\ideaProject\upms-center\upms-admin\src\main\java\jolly\upms\admin\web\controller\event" />
       <recent name="D:\ideaProject\upms-center\upms-admin\src\test" />
       <recent name="D:\ideaProject\upms-center\upms-admin\src" />
-      <recent name="D:\ideaProject\upms-center" />
-      <recent name="D:\ideaProject\upms-center\upms-api\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaProject\upms-center\upms-admin\src\main\resources\config" />
+      <recent name="D:\ideaProject\upms-center\upms-admin\src" />
+      <recent name="D:\ideaProject\upms-center\upms-admin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -329,6 +460,17 @@
       <module name="upms-admin" />
       <option name="VM_PARAMETERS" value="-XX:PermSize=2M -XX:MaxPermSize=4M -XX:+PrintGCDetails" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvmDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TestStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvmDemo.TestStack" />
+      <module name="upms-admin" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="jvmDemo.*" />
@@ -513,9 +655,11 @@
       <item itemvalue="JUnit.Test.test" />
       <item itemvalue="JUnit.Test.testSingle" />
       <item itemvalue="JUnit.TestHeapGC.permGenGC" />
+      <item itemvalue="Application.TestStack" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestStack" />
         <item itemvalue="Application.TestHeapFullGC" />
         <item itemvalue="JUnit.TestHeapGC.permGenGC" />
         <item itemvalue="JUnit.Test.testSingle" />
@@ -533,7 +677,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530602174877</updated>
-      <workItem from="1530602176531" duration="33218000" />
+      <workItem from="1530602176531" duration="36241000" />
+      <workItem from="1530753067730" duration="7353000" />
     </task>
     <task id="LOCAL-00001" summary="提交事件代码">
       <created>1530684148824</created>
@@ -542,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530684148824</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="提交事件代码">
+      <created>1530697069738</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1530697069738</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -578,46 +730,46 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33218000" />
+    <option name="totallyTimeSpent" value="43594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Application Servers" weight="0.32960895" />
-      <window_info anchor="right" id="Maven Projects" weight="0.22761194" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32960895" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.22761194" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.25503355" />
+      <window_info id="UI Designer" order="2" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.25950783" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.24049217" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2080537" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32995737" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18603411" />
-      <window_info anchor="right" id="Bean Validation" />
-      <window_info id="Web" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.24049217" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2885906" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
+      <window_info anchor="right" id="Bean Validation" order="3" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" weight="0.32995737" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,88 +804,19 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>new String(message.getBody())</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/upms-provider/src/main/resources/config/upms-dao.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/service/UpmsApiService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/com/jolly/TestMock.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/resources/cs-center-consumer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/maven_repository/com/jolly/upms-facade/1.0-SNAPSHOT/upms-facade-1.0-20180611.065653-17-sources.jar!/com/jolly/upms/facade/service/impl/UpmsApiServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-dubbo-provider.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="84" selection-start-line="13" selection-start-column="84" selection-end-line="13" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/service/impl/UpmsApiServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="127" column="49" lean-forward="true" selection-start-line="127" selection-start-column="49" selection-end-line="127" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-provider/src/main/java/com/jolly/upms/manager/service/impl/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-api/src/main/java/com/jolly/upms/facade/util/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-bean.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-provider/src/main/resources/spring/upms-rabbitmq.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-provider/src/main/resources/spring/upms-service.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/common/base/controller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -759,9 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,10 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -808,9 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,11 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -837,10 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-          <folding>
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,10 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding>
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,9 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,11 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,11 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,9 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,13 +971,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/AuthenticationAccessController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -981,20 +1018,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/interceptor/UpmsAccessInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,9 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1022,45 +1046,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/api/ApiController.java">
+    <entry file="jar://D:/jdk1.7.0_17/jre/lib/rt.jar!/java/lang/String.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-584">
-          <caret line="32" column="11" lean-forward="true" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        <state relative-caret-position="429">
+          <caret line="1086" lean-forward="true" selection-start-line="1086" selection-end-line="1086" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java">
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/vo/MenuNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        <state relative-caret-position="370">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="1062">
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java">
+    <entry file="jar://D:/maven_repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar!/javax/validation/Valid.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="144">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/api/ApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="152" column="27" selection-start-line="152" selection-start-column="27" selection-end-line="152" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapFullGC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestHeapGC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-dubbo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/test/jvmDemo/TestStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#655#656#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/AuthenticationAccessController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/config/rabbitmq.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbitmq-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="55" />
+          <folding>
+            <element signature="e#552#571#0" expanded="true" />
+            <element signature="e#577#601#0" expanded="true" />
+            <element signature="e#1963#1988#0" expanded="true" />
+            <element signature="e#2005#2030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/rabbit-listen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="91" selection-start-line="5" selection-start-column="91" selection-end-line="5" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-bean.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/resources/spring/upms-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/PushMessageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/maven_repository/com/rabbitmq/amqp-client/3.5.6/amqp-client-3.5.6.jar!/com/rabbitmq/client/MessageProperties.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upms-admin/src/main/java/jolly/upms/admin/web/controller/listen/BaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="66" column="60" lean-forward="true" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
